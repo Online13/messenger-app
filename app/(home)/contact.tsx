@@ -7,7 +7,9 @@ import ContactInactive from "@/components/organisms/@contact/components/contact-
 export default function Page() {
 	return (
 		<View style={styles.container}>
-			<Header />
+			<View style={styles.headerView}>
+				<Header />
+			</View>
 			<ScrollView style={styles.root}>
 				<Option />
 				<ContactActive />
@@ -25,22 +27,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "white",
 	},
-	title: {
-		fontSize: 24,
-		fontWeight: "700",
-	},
-	header: {
-		height: 60,
-		alignItems: "center",
-		flexDirection: "row",
-		paddingHorizontal: 27,
-		backgroundColor: "white",
-		justifyContent: "space-between",
+	headerView: {
 		borderBottomWidth: 0.5,
-		borderBottomColor: "#aaa",
-	},
-	titleList: {
-		fontSize: 24,
-		fontWeight: "600",
+		borderBottomColor: "#000",
 	},
 });
