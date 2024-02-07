@@ -65,7 +65,7 @@ const inactiveContacts = [
 
 export default function Page() {
 	return (
-		<ScrollView style={styles.root}>
+		<View style={styles.container}>
 			<View style={styles.header}>
 				<Text style={styles.title}>Contacts</Text>
 				<View>
@@ -74,43 +74,55 @@ export default function Page() {
 					</TouchableOpacity>
 				</View>
 			</View>
-			<View style={styles.option}>
-				<TouchableOpacity style={styles.optionContainer}>
-					<Ionicons name="add-circle-outline" size={30} color="blue" />
-					<Text style={styles.textOption}>Add New Contact</Text>
-				</TouchableOpacity>
-				<TouchableOpacity style={styles.optionContainer}>
-					<Ionicons name="person-circle-outline" size={30} color="blue" />
-					<Text style={styles.textOption}>Import Your Contacts</Text>
-				</TouchableOpacity>
-			</View>
-			<View style={styles.activeContact}>
-				<Text style={styles.titleList}>Active Contacts</Text>
-				<View>
-					<FlatList
-						data={activeContacts}
-						renderItem={({ item }) => (
-							<ContactItemActive name={item.name} image={item.image} />
-						)}
-						keyExtractor={(item) => item.name}
-						scrollEnabled={false}
-					/>
+			<ScrollView style={styles.root}>
+				<View style={styles.option}>
+					<TouchableOpacity style={styles.optionContainer}>
+						<Ionicons name="add-circle-outline" size={30} color="blue" />
+						<Text style={styles.textOption}>Add New Contact</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={styles.optionContainer}>
+						<Ionicons
+							name="person-circle-outline"
+							size={30}
+							color="blue"
+						/>
+						<Text style={styles.textOption}>Import Your Contacts</Text>
+					</TouchableOpacity>
 				</View>
-			</View>
-			<View style={styles.inactiveContact}>
-				<Text style={styles.titleList}>Inactive Contacts</Text>
-				<View>
-					<FlatList
-						data={activeContacts}
-						renderItem={({ item }) => (
-							<ContactItemInactive name={item.name} image={item.image} />
-						)}
-						keyExtractor={(item) => item.name}
-						scrollEnabled={false}
-					/>
+				<View style={styles.activeContact}>
+					<Text style={styles.titleList}>Active Contacts</Text>
+					<View>
+						<FlatList
+							data={activeContacts}
+							renderItem={({ item }) => (
+								<ContactItemActive
+									name={item.name}
+									image={item.image}
+								/>
+							)}
+							keyExtractor={(item) => item.name}
+							scrollEnabled={false}
+						/>
+					</View>
 				</View>
-			</View>
-		</ScrollView>
+				<View style={styles.inactiveContact}>
+					<Text style={styles.titleList}>Inactive Contacts</Text>
+					<View>
+						<FlatList
+							data={activeContacts}
+							renderItem={({ item }) => (
+								<ContactItemInactive
+									name={item.name}
+									image={item.image}
+								/>
+							)}
+							keyExtractor={(item) => item.name}
+							scrollEnabled={false}
+						/>
+					</View>
+				</View>
+			</ScrollView>
+		</View>
 	);
 }
 
@@ -145,6 +157,9 @@ const ContactItemInactive = ({ name, image }) => {
 };
 
 const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	},
 	root: {
 		flex: 1,
 		backgroundColor: "white",
