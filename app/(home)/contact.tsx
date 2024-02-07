@@ -93,6 +93,7 @@ export default function Page() {
 							<ContactItemActive name={item.name} image={item.image} />
 						)}
 						keyExtractor={(item) => item.name}
+						scrollEnabled={false}
 					/>
 				</View>
 			</View>
@@ -105,6 +106,7 @@ export default function Page() {
 							<ContactItemInactive name={item.name} image={item.image} />
 						)}
 						keyExtractor={(item) => item.name}
+						scrollEnabled={false}
 					/>
 				</View>
 			</View>
@@ -145,6 +147,7 @@ const ContactItemInactive = ({ name, image }) => {
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
+		backgroundColor: "white",
 	},
 	title: {
 		fontSize: 24,
@@ -157,6 +160,8 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 27,
 		backgroundColor: "white",
 		justifyContent: "space-between",
+		borderBottomWidth: 0.5,
+		borderBottomColor: "#aaa",
 	},
 	option: {
 		marginTop: 10,
@@ -191,7 +196,7 @@ const styles = StyleSheet.create({
 	},
 	name: {
 		marginLeft: 10,
-		fontWeight: "500",
+		fontWeight: "600",
 	},
 	image: {
 		width: 50,
