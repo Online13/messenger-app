@@ -77,14 +77,18 @@ export default function Page() {
 			<ScrollView style={styles.root}>
 				<View style={styles.option}>
 					<TouchableOpacity style={styles.optionContainer}>
-						<Ionicons name="add-circle-outline" size={30} color="blue" />
+						<Ionicons
+							name="add-circle-outline"
+							size={30}
+							color="#176EF9"
+						/>
 						<Text style={styles.textOption}>Add New Contact</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.optionContainer}>
 						<Ionicons
 							name="person-circle-outline"
 							size={30}
-							color="blue"
+							color="#176EF9"
 						/>
 						<Text style={styles.textOption}>Import Your Contacts</Text>
 					</TouchableOpacity>
@@ -188,7 +192,7 @@ const styles = StyleSheet.create({
 		paddingVertical: 5,
 	},
 	textOption: {
-		color: "blue",
+		color: "#176EF9",
 		marginLeft: 15,
 		fontWeight: "500",
 	},
@@ -220,7 +224,7 @@ const styles = StyleSheet.create({
 	},
 	inviteButton: {
 		marginLeft: "auto",
-		backgroundColor: "blue",
+		backgroundColor: "#176EF9",
 		paddingVertical: 8,
 		paddingHorizontal: 25,
 		borderRadius: 14,
