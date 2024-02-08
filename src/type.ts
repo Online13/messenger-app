@@ -1,3 +1,4 @@
+import { ImageSourcePropType } from "react-native";
 
 export type Discussion = {
 	id: string;
@@ -14,4 +15,9 @@ export type Call = {
 
 	type: string
 	duration: number; //in second
+};
+
+export type Information = {
+	name: string;
+	image: ImageSourcePropType;
 };
