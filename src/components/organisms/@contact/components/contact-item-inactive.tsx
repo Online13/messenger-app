@@ -15,7 +15,7 @@ export const ContactItemInactive = ({ data }: InformationProps) => {
 			<Text style={styles.name}>{data.name}</Text>
 			<TouchableOpacity
 				style={styles.inviteButton}
-				onPress={() => console.log("Invite button pressed for:", name)}
+				onPress={() => console.log("Invite button pressed for:", data.name)}
 			>
 				<Text style={styles.inviteButtonText}>Invite</Text>
 			</TouchableOpacity>
