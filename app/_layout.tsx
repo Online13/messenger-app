@@ -1,63 +1,16 @@
-import { Tabs } from "expo-router/tabs";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SessionProvider } from "@/providers/session-provider";
+import { Stack } from "expo-router";
 
-export default function AppLayout() {
-  return (
-    <SafeAreaView style={styles.root}>
-		<StatusBar translucent={false} backgroundColor="white" />
-      <Tabs>
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="index"
-          options={{
-            // This tab will no longer show up in the tab bar.
-            href: null,
-          }}
-        />
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="home"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="calls"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="create"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="contact"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tabs.Screen
-          // Name of the route to hide.
-          name="setting"
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Tabs>
-    </SafeAreaView>
-  );
+export default function Layout() {
+	return (
+		<SessionProvider>
+			<Stack>
+				<Stack.Screen name="(home)" options={{ headerShown: false, animation: "flip" }} />
+				<Stack.Screen
+					name="discussion/[id]"
+					options={{ headerShown: false }}
+				/>
+			</Stack>
+		</SessionProvider>
+	);
 }
-
-const styles = StyleSheet.create({
-	root: {
-		flex: 1,
-		backgroundColor: "white",
-	}
-});
