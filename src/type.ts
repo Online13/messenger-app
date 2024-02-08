@@ -7,3 +7,10 @@ export type Discussion = {
 	last_discussion: string | null;
 	draft: string | null;
 };
+
+export type Message = {
+	content: string;
+	discussionId: string;
+	owner: { name: string; id: string };
+	type: "text" | "audio" | "image" | "file";
+};
