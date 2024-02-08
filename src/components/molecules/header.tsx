@@ -1,13 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-export function Header() {
+type HeaderProps = {
+	title: string;
+	icon: ReactNode;
+	onPress?(): void;
+};
+
+export function Header({ title, icon, onPress }: HeaderProps) {
 	return (
 		<View style={styles.header}>
-			<Text style={styles.title}>Contacts</Text>
-			<TouchableOpacity>
-				<Feather name="search" size={24} color="black" />
+			<Text style={styles.title}>{title}</Text>
+			<TouchableOpacity onPress={onPress}>
+				{icon}
 			</TouchableOpacity>
 		</View>
 	);

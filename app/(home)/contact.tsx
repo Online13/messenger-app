@@ -1,15 +1,17 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import { Header } from "@/components/organisms/@contact/components/header";
 import Option from "@/components/organisms/@contact/components/option";
 import ContactActive from "@/components/organisms/@contact/components/contact-active";
 import ContactInactive from "@/components/organisms/@contact/components/contact-inactive";
+import { Feather } from "@expo/vector-icons";
+import { Header } from "@/components/molecules/header";
 
 export default function Page() {
 	return (
 		<View style={styles.container}>
-			<View style={styles.headerView}>
-				<Header />
-			</View>
+			<Header
+				title="Contacts"
+				icon={<Feather name="search" size={24} color="black" />}
+			/>
 			<ScrollView style={styles.root}>
 				<Option />
 				<ContactActive />
@@ -26,9 +28,5 @@ const styles = StyleSheet.create({
 	root: {
 		flex: 1,
 		backgroundColor: "white",
-	},
-	headerView: {
-		borderBottomWidth: 0.5,
-		borderBottomColor: "#000",
 	},
 });

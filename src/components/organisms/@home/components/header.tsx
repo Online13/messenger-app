@@ -6,20 +6,17 @@ export function Header() {
 	return (
 		<View style={styles.header}>
 			<Text style={styles.title}>Hello Fateme</Text>
-			<View>
-				<TouchableOpacity>
-					<Ionicons name="notifications-outline" size={24} color="black" />
-				</TouchableOpacity>
-			</View>
+			<TouchableOpacity>
+				<Ionicons name="notifications-outline" size={24} color="black" />
+			</TouchableOpacity>
 		</View>
 	);
 }
 
-
 const styles = StyleSheet.create({
 	title: {
-		fontSize: 24,
-		fontWeight: "700",
+		fontSize: 20,
+		fontWeight: "500",
 	},
 	header: {
 		height: 60,
