@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
 		height: "100%",
 	},
 	discussionName: {
-		fontSize: 18,
-		fontWeight: "700",
+		fontSize: 16,
+		fontWeight: "500",
 	},
 	discussionAbout: {
 		flex: 1,

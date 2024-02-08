@@ -1,3 +1,4 @@
+import { ImageSourcePropType } from "react-native";
 
 export type Discussion = {
 	id: string;
@@ -13,4 +14,17 @@ export type Message = {
 	discussionId: string;
 	owner: { name: string; id: string };
 	type: "text" | "audio" | "image" | "file";
+};
+export type Call = {
+	id: string;
+	datetime: string;
+	name: string;
+
+	type: string
+	duration: number; //in second
+};
+
+export type Information = {
+	name: string;
+	image: ImageSourcePropType;
 };
