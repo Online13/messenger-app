@@ -5,7 +5,7 @@ export default function Layout() {
 	return (
 		<SessionProvider>
 			<Stack>
-				<Stack.Screen name="(home)" options={{ headerShown: false }} />
+				<Stack.Screen name="(home)" options={{ headerShown: false, animation: "flip" }} />
 				<Stack.Screen
 					name="discussion/[id]"
 					options={{ headerShown: false }}
