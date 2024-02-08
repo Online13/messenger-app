@@ -22,9 +22,10 @@ export const ContactItemActive = ({ data }: InformationProps) => {
 
 const styles = StyleSheet.create({
 	item: {
+		paddingVertical: 10,
 		flexDirection: "row",
 		alignItems: "center",
-		padding: 10,
+		paddingHorizontal: 0,
 	},
 	name: {
 		marginLeft: 10,

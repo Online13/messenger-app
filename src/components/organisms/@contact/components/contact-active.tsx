@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
 		marginTop: 27,
 	},
 	titleList: {
-		fontSize: 24,
+		fontSize: 20,
+		marginBottom: 12,
 		fontWeight: "600",
 	},
 });

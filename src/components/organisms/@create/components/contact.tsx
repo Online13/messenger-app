@@ -9,9 +9,9 @@ export default function ContactActive() {
 			<View>
 				<FlatList
 					data={activeContacts}
-					renderItem={({ item }) => <ContactItemActive data={item} />}
-					keyExtractor={(item) => item.name}
 					scrollEnabled={false}
+					keyExtractor={(item) => item.name}
+					renderItem={({ item }) => <ContactItemActive data={item} />}
 				/>
 			</View>
 		</View>
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
 		marginTop: 27,
 	},
 	titleList: {
-		fontSize: 24,
+		fontSize: 20,
+		marginBottom: 12,
 		fontWeight: "600",
 	},
 });
